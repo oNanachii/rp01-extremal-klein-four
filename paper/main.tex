@@ -1,0 +1,1531 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=28mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype,booktabs,enumitem}
+\usepackage[authoryear,round]{natbib}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Extremal Klein Four Counts in Semi-Extraspecial 2-Groups},
+ pdfsubject={Research preprint version 0.1.0},pdfauthor={Qi Liu}}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Extremal Klein four counts}
+\fancyhead[R]{\small Preprint v0.1.0}
+\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14pt}
+\setlength{\emergencystretch}{2em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\numberwithin{equation}{section}
+\newcommand{\F}{\mathbb F}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\Gauss}{\mathcal G}
+\newcommand{\Walsh}{\mathcal W}
+\newcommand{\Pm}{\mathcal P}
+\newcommand{\vfour}{v_4}
+\newcommand{\Qstar}{Q_*}
+\newcommand{\Hp}{H_+}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\id}{\mathrm{id}}
+\title{Extremal Klein Four Counts in\\ Semi-Extraspecial \(2\)-Groups}
+\author{Qi Liu}
+\date{Research preprint, version 0.1.0\\17 October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Let \(G\) be a semi-extraspecial \(2\)-group with
+\(Z(G)=G'=\Phi(G)\cong C_2^2\) and
+\(\dim_{\F_2}G/Z(G)=2n\).
+We consider the branch with the largest possible number of elements
+satisfying \(g^2=1\), including the identity.
+We give sharp bounds for the number of actual Klein four subgroups,
+with separate formulas for odd and even half-dimension and a small
+exception at \(n=2\).
+We describe equality through the radical and sign of a sum of three
+dual quadratic forms. For every even \(n\geq4\), the groups attaining the
+lower bound constitute one isomorphism type: an eight-dimensional
+quadratic core together with hyperbolic \(\F_4\)-planes, all sharing the
+same two-dimensional target. The corresponding group operation is a
+central product. The proof retains every \(\F_2\)-linear refinement and
+rules out negative scalar-sign compensation between the core and the
+entire semisimple remainder. Individual planes in an initial splitting
+of the remainder need not all be positive.
+Two explicit examples delimit the inference from maximality and the
+scope of the even-parameter classification.
+\end{abstract}
+\noindent\textit{Keywords:} semi-extraspecial groups; Klein four subgroups;
+quadratic maps; bent functions; central products.
+\par\medskip
+\noindent{\small Preprint v0.1.0; \href{https://creativecommons.org/licenses/by/4.0/}{CC BY 4.0}.
+Paper: \href{https://doi.org/10.5281/zenodo.23450418}{doi:10.5281/zenodo.23450418}.\\
+Code and Chinese companion: \href{https://doi.org/10.5281/zenodo.23450447}{doi:10.5281/zenodo.23450447}.}
+
+\section{The problem and the main results}\label{sec:main}
+Counting elements whose squares are the identity does not determine how
+those elements commute. The number of Klein four subgroups measures a
+specific part of this additional structure: it counts pairs of distinct
+nonidentity involutions whose product is again an involution. For special
+\(2\)-groups, squares and commutators are encoded by a quadratic map and
+its polar. Requiring every central quotient of order two to be
+extraspecial makes all nonzero scalar polars nondegenerate. In the case
+of a center of order four there are exactly three scalar components,
+so both the element count and the subgroup count can be expressed by a
+small, coupled family of quadratic character sums.
+
+We study the branch on which the element count is largest. This is also
+the totally orthogonal branch in the group class below. Our question is
+how far the Klein four count can vary on this branch, and which groups
+attain its lower endpoint. The restriction fixes a natural extremal
+condition while leaving the interaction of the three square forms to
+be determined.
+
+All groups are finite. A nonabelian \(2\)-group \(E\) is
+\emph{extraspecial} if \(Z(E)=E'=\Phi(E)\) has order \(2\).
+A group \(G\) is \emph{semi-extraspecial} if \(G/U\) is extraspecial for
+every subgroup \(U\) of index \(2\) in \(Z(G)\).
+Throughout this paper we impose
+\begin{equation}\label{eq:class}
+ Z(G)=G'=\Phi(G)=W\cong C_2^2,\qquad
+ V=G/W\cong\F_2^{\,2n},\qquad |G|=2^{2n+2},
+\end{equation}
+and require \(G\) to be semi-extraspecial.
+The parity parameter is \(n\), the \emph{half-dimension} of \(V\).
+
+Write
+\[
+ I(G)=\{g\in G:g^2=1\},\quad s(G)=|I(G)|,\quad
+ \vfour(G)=|\{H\leq G:H\cong C_2\times C_2\}|.
+\]
+Thus \(s(G)\) includes the identity and \(\vfour(G)\) counts subgroups,
+not their conjugacy classes. Put
+\begin{equation}\label{eq:Mn}
+ h=2^n,\qquad N=h^2,\qquad
+ M_n=\frac{h^4+9h^3+36h^2-36h+8}{24}.
+\end{equation}
+
+\begin{theorem}[Sharp numerical bounds]\label{thm:bounds}
+There is no group in \eqref{eq:class} with \(n=1\).
+For each \(n\geq2\) the class is nonempty and
+\[
+ s(G)\leq 2^{2n}+3\cdot2^n=N+3h,
+\]
+with equality attainable. On the branch \(s(G)=N+3h\), the sharp bounds
+are
+\begin{equation}\label{eq:bounds}
+\begin{array}{ll}
+ n=2:& M_n\leq\vfour(G)\leq M_n+2^{3n-2},\\[2pt]
+ n\geq3\text{ odd}:&
+ M_n-2^{3n-5}\leq\vfour(G)\leq M_n+2^{3n-5},\\[2pt]
+ n\geq4\text{ even}:&
+ M_n-2^{3n-4}\leq\vfour(G)\leq M_n+2^{3n-2}.
+\end{array}
+\end{equation}
+Every displayed endpoint is attained for every indicated \(n\).
+For \(n=2\), the only values on this branch are \(53\) and \(69\).
+No assertion is made that every integer between the endpoints occurs.
+\end{theorem}
+
+The square map is the \(\F_2\)-quadratic map
+\(Q:V\to W,\ Q(gW)=g^2\), with \(W\) written additively.
+Two such maps \(Q:V\to W\) and \(\widetilde Q:\widetilde V\to\widetilde W\)
+are \emph{strictly equivalent} if there are invertible
+\(\F_2\)-linear maps \(S:V\to\widetilde V\) and \(T:W\to\widetilde W\) such that
+\begin{equation}\label{eq:strict}
+ \widetilde Q(Sv)=TQ(v)\qquad(v\in V).
+\end{equation}
+In particular, adding an arbitrary linear map is not part of this
+equivalence. Its precise group-theoretic meaning is proved in
+\cref{prop:strict}.
+
+Let \(K=\F_4=\F_2[\alpha]\), where \(\alpha^2+\alpha+1=0\).
+The trace \(\Tr=\Tr_{K/\F_2}\) is regarded as \(K\)-valued through
+\(\F_2\subset K\). Define
+\begin{equation}\label{eq:representatives}
+ \Qstar(a,b,c,d)=ad+bc+\Tr(ac)+a+\alpha c,\qquad
+ \Hp(u,v)=uv.
+\end{equation}
+Both are \(\F_2\)-quadratic maps with target \(K\).
+The use of \(K\)-coordinates does \emph{not} declare \(\Qstar\) to be a
+homogeneous quadratic form over \(K\).
+
+\begin{theorem}[Even-parameter lower equality]\label{thm:classification}
+Assume \eqref{eq:class}, and let \(n\geq4\) be even.
+The following conditions are equivalent:
+\begin{enumerate}[label=(\roman*)]
+\item \(s(G)=2^{2n}+3\cdot2^n\) and
+      \(\vfour(G)=M_n-2^{3n-4}\).
+\item The square map of \(G\) is strictly equivalent to
+\[
+ \Qstar\perp \Hp^{\perp r},\qquad r=(n-4)/2,
+\]
+where all summands take values in the same \(W=K\).
+\item \(G\) is isomorphic to the central product, along that common \(W\),
+of the group \(G_*\) associated with \(\Qstar\) and \(r\) copies of the
+order-\(64\) Heisenberg group \(H(K)\).
+\end{enumerate}
+Consequently there is exactly one group isomorphism type for each
+fixed even \(n\geq4\) satisfying (i).
+This states existence of a standard decomposition and uniqueness of the
+whole group type, not uniqueness of an embedded core or of a central
+decomposition.
+\end{theorem}
+
+The first numerical instances of \cref{thm:bounds} are listed in
+\cref{tab:small}.
+\begin{table}[htb]
+\centering
+\caption{Sharp Klein four counts on the maximum-\(s\) branch.}
+\label{tab:small}
+\begin{tabular}{crrrr}
+\toprule
+\(n\)&\(|G|\)&\(s_{\max}\)&\(\min\vfour\)&\(\max\vfour\)\\
+\midrule
+2&64&28&53&69\\
+3&256&88&431&463\\
+4&1024&304&4371&5651\\
+\bottomrule
+\end{tabular}
+\end{table}
+The first higher-dimensional instance of \cref{thm:classification}
+has \(n=6\), \(\dim_{\F_2}V=12\), and \(|G|=16384\).
+The classification does not include odd \(n\), other values of \(s\),
+or the intermediate attainable values of \(\vfour\).
+
+The methods belong to existing frameworks. Quadratic maps model special
+\(2\)-groups and their central products \citep{KK12,KK15}; alternating
+pencils describe the commutator structure \citep{LM18,PFMR14,MPG13}.
+The scalar-dual description of \citep[Theorem 2.1,
+pp.~509--510]{AFH24} and the general Maiorana--McFarland dual formula of
+\citep[equation (4), p.~313]{CMP18} provide the character-sum tools used
+below. The \(D\equiv0\) upper endpoint is a direct consequence of the
+partial-difference-set theorem in \citep[Theorem 6]{WFW23}, combined with
+an elementary subgroup lift count. We give that substitution in
+\cref{sec:context}.
+
+The results proved here assemble the numerical bounds, their precise
+equality conditions, and the exhaustive lower-equality classification
+in \cref{thm:classification}. The selection of the \(96\) refinements of
+the equality polar, their local normalization, and the sign restriction
+between the core and the entire remainder are short deductions from
+the cited formulas and classical quadratic-form criteria. They are not
+new general duality or equivalence methods. The distinction from a
+classification of polar pencils is that the full square map, including
+its linear terms, must be retained. All the arguments needed for the
+stated results are included; no computational enumeration is used as a
+proof of exhaustiveness.
+
+\section{Square maps, strict equivalence, and counting}\label{sec:prelim}
+An \(\F_2\)-quadratic map \(Q:V\to W\) is a map with \(Q(0)=0\) for
+which
+\[
+ B(x,y)=Q(x+y)+Q(x)+Q(y)
+\]
+is bilinear. Its polar \(B\) is alternating. Linear terms are allowed
+and carry information.
+
+\begin{proposition}[The group model]\label{prop:strict}
+For the groups under consideration, \(Q(gW)=g^2\) is well-defined,
+its polar is the commutator map, and all three nonzero scalar polars
+\(\lambda B\), \(\lambda\in W^*\setminus\{0\}\), are nondegenerate.
+Conversely, any \(\F_2\)-quadratic map from a nonzero \(V\) to
+\(W=\F_2^2\) with these three
+polars nondegenerate is the square map of a group satisfying
+\eqref{eq:class} and the semi-extraspecial condition.
+Two resulting groups are isomorphic if and only if their square maps
+are strictly equivalent in the sense of \eqref{eq:strict}.
+\end{proposition}
+\begin{proof}
+The hypotheses \(G'=W\leq Z(G)\), \(W^2=1\), and \(G/W\) elementary
+abelian imply that \(G\) has class \(2\) and exponent \(4\).
+Changing a lift by an element of \(W\) changes neither its square nor
+a commutator. The square identity in a class-\(2\) group gives the polar
+formula. For \(U=\ker\lambda\), the center of \(G/U\) modulo \(W/U\)
+is the radical of \(\lambda B\). Thus \(G/U\) is extraspecial exactly
+when this radical is zero.
+
+For the converse, choose coordinates and write
+\[
+ Q(v)=\sum_i a_i v_i+\sum_{i<j}c_{ij}v_iv_j.
+\]
+The bilinear map
+\[
+ F(v,u)=\sum_i a_iv_iu_i+\sum_{i<j}c_{ij}v_i u_j
+\]
+has \(F(v,v)=Q(v)\). Define on \(V\times W\)
+\begin{equation}\label{eq:group-law}
+ (v,w)(u,t)=(v+u,w+t+F(v,u)).
+\end{equation}
+Bilinearity proves the cocycle identity and associativity. The square
+and commutator are \(Q\) and \(B\). Nondegeneracy of the scalar polars
+gives \(\rad B=0\), so the center is exactly \(W\).
+The span of the values of \(B\) is \(W\), since otherwise a nonzero
+\(\lambda\) would annihilate \(B\). Hence the derived subgroup is \(W\);
+the identity \(\Phi(G)=G^2G'\) then gives \(\Phi(G)=W\).
+The preceding quotient argument proves the semi-extraspecial condition.
+
+A group isomorphism preserves the characteristic center and squares,
+and therefore induces \(S,T\) in \eqref{eq:strict}.
+Conversely, a basis of \(V\), lifted to \(G\), together with a basis of
+the elementary abelian center presents \(G\) by centrality, its
+generator squares \(Q(e_i)\), and its commutators \(B(e_i,e_j)\).
+Collection puts every element in a form
+\(w g_1^{a_1}\cdots g_{2n}^{a_{2n}}\), \(a_i\in\{0,1\}\).
+The presentation has at most \(4\cdot2^{2n}\) elements and surjects onto
+\(G\), so these are all its relations. Sending the center by \(T\) and
+each \(g_i\) to a lift of \(Se_i\) respects these relations by
+\eqref{eq:strict}. It gives a surjection between groups of equal order
+and hence an isomorphism.
+\end{proof}
+
+\begin{lemma}[A common target and a central product]\label{lem:central}
+If \(V=V_0\oplus V_1\) and \(B(V_0,V_1)=0\), then
+\(Q=Q|_{V_0}\perp Q|_{V_1}\) as maps to the \emph{same} \(W\).
+When the restrictions have nondegenerate scalar polars, the corresponding
+group is their central product along \(W\).
+For \(r+1\) factors this means
+\[
+ (G_0\times\cdots\times G_r)/\mathcal N,\qquad
+ \mathcal N=\{(w_0,\ldots,w_r)\in W^{r+1}:\ \textstyle\sum_iw_i=0\}.
+\]
+\end{lemma}
+\begin{proof}
+The assertion about \(Q\) is exactly its polar identity.
+Inside the group associated with \(Q\), the preimages of \(V_0,V_1\)
+commute, intersect in \(W\), and generate the group. Multiplication from
+their external direct product has the stated central kernel. The same
+argument applies to any number of summands. This also proves the
+square-map version of the standard correspondence
+\citep[Lemma 2.4]{KK12}.
+\end{proof}
+
+Let \(S=Q^{-1}(0)\), \(z=|S|\), and set
+\[
+ T_0=|\{(x,y)\in S^2:x+y\in S\}|,\qquad
+ J_2=|\{(g,h)\in I(G)^2:gh=hg\}|.
+\]
+\begin{lemma}[Counting actual Klein four subgroups]\label{lem:count}
+One has
+\begin{equation}\label{eq:count}
+ s=4z,\qquad J_2=16T_0=3s-2+6\vfour(G).
+\end{equation}
+If \(L\) is the number of two-dimensional \(\F_2\)-subspaces on which
+\(Q\) vanishes, then
+\begin{equation}\label{eq:zero-planes}
+ T_0=3z-2+6L,\qquad \vfour(G)=16L+6z-5.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Each zero vector has four involutory lifts, independently for each
+member of an ordered pair. For \(x,y\in S\), the lifts commute exactly
+when \(B(x,y)=Q(x+y)=0\). This proves the first two equalities.
+Among commuting ordered pairs of involutory elements, there are \(s\)
+diagonal pairs, \(s-1\) pairs with only the first entry the identity,
+and \(s-1\) with only the second. Every remaining pair generates a unique
+Klein four group; each such subgroup has six ordered generating pairs.
+The identical argument in \(S\), with zero in place of the identity,
+gives \(T_0=3z-2+6L\) and then \eqref{eq:zero-planes}.
+\end{proof}
+
+\section{A third Walsh moment and the sharp bounds}\label{sec:bounds}
+Choose a basis of \(W^*\), write the scalar components as \(q_1,q_2\),
+and put \(q_3=q_1+q_2\).
+For \(\xi\in V^*\), define
+\[
+ \Walsh_i(\xi)=\sum_{x\in V}(-1)^{q_i(x)+\xi(x)},\qquad
+ a_0=\sum_{i=1}^3\Walsh_i(0),\qquad
+ \Pm=\sum_{\xi\in V^*}\prod_{i=1}^3\Walsh_i(\xi).
+\]
+We use the Fourier convention
+\(\widehat f(\xi)=\sum_x f(x)(-1)^{\xi(x)}\).
+
+\begin{lemma}[Quadratic character sums]\label{lem:gauss}
+A quadratic function \(d\) on a finite \(\F_2\)-space with \(d(0)=0\)
+and polar radical of dimension \(\rho\) has character sum zero if its
+restriction to that radical is nonzero. Otherwise, if the ambient
+dimension is \(2n\), its character sum is
+\(\pm2^{n+\rho/2}\).
+For a nondegenerate scalar quadratic form \(q\), every Walsh value has
+absolute value \(2^n\).
+\end{lemma}
+\begin{proof}
+On the radical, \(d\) is linear. Translating by a radical vector with
+value \(1\) pairs terms with opposite signs. If the restriction is zero,
+\(d\) descends to a nondegenerate quadratic form on the quotient, with
+\(2^\rho\) preimages for each vector.
+A symplectic basis decomposes a nondegenerate alternating polar into
+two-dimensional planes. On such a plane the quadratic form is
+\(xy+ax+by\), whose character sum is \(2(-1)^{ab}\).
+Multiplication over the planes proves the formula.
+Adding a linear form to a nondegenerate quadratic form changes no
+polar, which proves the Walsh assertion.
+\end{proof}
+
+\begin{proposition}[The counting identity]\label{prop:moment}
+The maximum possible value of \(s\) is at most \(N+3h\).
+It is reached if and only if all three original Gauss sums
+\(\Walsh_i(0)\) equal \(h\).
+Without assuming this equality, one has
+\begin{equation}\label{eq:moment}
+ T_0=\frac{N^2+3Na_0+3a_0^2+21N}{64}
+          +\frac{3\Pm}{32N}.
+\end{equation}
+On the branch \(s=N+3h\),
+\begin{equation}\label{eq:moment-max}
+ \vfour(G)=M_n+\frac{\Pm}{4N}.
+\end{equation}
+\end{proposition}
+\begin{proof}
+The indicator identity
+\[
+ 1_S=\frac{1+(-1)^{q_1}+(-1)^{q_2}+(-1)^{q_3}}4
+\]
+gives \(z=(N+a_0)/4\) and \(s=N+a_0\).
+By \cref{lem:gauss}, each original Gauss sum is \(\pm h\), proving the
+maximum assertion and its equality criterion.
+
+Put \(U(\xi)=\sum_i\Walsh_i(\xi)\). Then
+\(\widehat{1_S}(\xi)=(N\mathbf1_{\xi=0}+U(\xi))/4\).
+Fourier orthogonality gives \(T_0=N^{-1}\sum_\xi\widehat{1_S}(\xi)^3\).
+Since \(\Walsh_i(\xi)^2=N\),
+\[
+ U(\xi)^3=7NU(\xi)+6\Walsh_1(\xi)\Walsh_2(\xi)\Walsh_3(\xi).
+\]
+Moreover \(\sum_\xi U(\xi)=3N\), because each \(q_i(0)=0\).
+Thus the numerator after expansion is
+\(N^3+3N^2a_0+3Na_0^2+21N^2+6\Pm\), divided by \(64N\).
+This proves \eqref{eq:moment}. Substituting \(a_0=3h\) and
+\eqref{eq:count}, using \(N=h^2\), gives \eqref{eq:moment-max}.
+\end{proof}
+
+For a nondegenerate binary quadratic form, its actual Walsh dual records
+the hyperbolic or elliptic type of every linear refinement; this is
+\citep[Theorem 2.1, pp.~509--510]{AFH24}. In binary coordinates, a
+diagonal square represents a linear function, so the statement includes
+the refinements used here. Let \(B_i\) be the polar matrices of \(q_i\)
+in the chosen binary coordinates. More explicitly, if
+\(\Walsh_i(0)=h(-1)^{\epsilon_i}\) and covectors are columns, translation
+by \(B_i^{-1}\xi\) gives
+\[
+ \Walsh_i(\xi)=h(-1)^{q_i(B_i^{-1}\xi)+\epsilon_i}.
+\]
+The origin phase \(\epsilon_i\) is part of the actual dual. We now assume
+\(s=N+3h\), so all three \(\epsilon_i\) vanish. Completing the square gives
+\begin{equation}\label{eq:duals}
+ \Walsh_i(\xi)=h(-1)^{q_i^*(\xi)},\qquad
+ q_i^*(\xi)=q_i(B_i^{-1}\xi),\qquad q_i^*(0)=0.
+\end{equation}
+Indeed translation by \(B_i^{-1}\xi\) removes the Fourier linear
+term. Define
+\begin{equation}\label{eq:DC}
+ D=q_1^*+q_2^*+q_3^*,\qquad
+ C=B_1^{-1}+B_2^{-1}+(B_1+B_2)^{-1},\qquad
+ \rho=\dim\ker C.
+\end{equation}
+Here \(D\) is the pointwise sum in \(\F_2\), whereas
+\(\Gauss(D)=\sum_\xi(-1)^{D(\xi)}\) is an integer.
+Thus \(D\equiv0\) gives \(\Gauss(D)=N\), not zero.
+The matrix \(C\) is the polar of \(D\). In particular
+\begin{equation}\label{eq:P-dual}
+ \Pm=h^3\sum_{\xi}(-1)^{D(\xi)}.
+\end{equation}
+Each inverse \(B_i^{-1}\) is alternating: for \(\xi=B_i x\),
+\(\xi^{\mathsf T}B_i^{-1}\xi=x^{\mathsf T}B_ix=0\).
+
+\begin{lemma}[Paired cyclic summands]\label{lem:paired}
+Let \(\beta\) be a nondegenerate alternating form over \(\F_2\), and
+let \(A\) be self-adjoint for \(\beta\), with \(\beta(v,Av)=0\) for
+every \(v\). There is a \(\beta\)-orthogonal decomposition into
+\(A\)-invariant nondegenerate spaces \(X\oplus Y\), where \(X,Y\) are
+totally isotropic cyclic modules with the same elementary divisor
+\(f^k\). In particular every elementary divisor occurs in pairs.
+\end{lemma}
+\begin{proof}
+Self-adjointness gives
+\[
+\begin{aligned}
+ \beta(v,A^{2j}v)&=\beta(A^jv,A^jv)=0,\\
+ \beta(v,A^{2j+1}v)&=\beta(A^jv,A^{j+1}v)=0.
+\end{aligned}
+\]
+Every cyclic module is therefore totally isotropic.
+Distinct primary components are orthogonal: on one of them a
+polynomial annihilating the other is invertible, and self-adjointness
+moves that polynomial to the other argument. Hence each primary
+component is nondegenerate.
+
+In an \(f\)-primary component choose \(v\) with maximal annihilator
+\(f^k\) and let \(X=\F_2[A]v\).
+Choose \(w\) in that component with
+\(\beta(f(A)^{k-1}v,w)\ne0\), and put \(Y=\F_2[A]w\).
+The kernel of the pairing map \(X\to Y^*\) is a submodule.
+Any nonzero submodule of \(\F_2[t]/(f^k)\) contains its socle
+\(f^{k-1}X\), but the chosen pairing is not zero on that socle.
+The kernel is zero. Maximality of \(k\) gives \(\dim Y\leq\dim X\);
+thus the pairing is perfect and dimensions are equal.
+Total isotropy and perfect pairing imply \(X\cap Y=0\) and
+nondegeneracy of \(X\oplus Y\). Its orthogonal complement is
+\(A\)-invariant. Repeating proves the lemma.
+\end{proof}
+
+\begin{proposition}[Radical restrictions]\label{prop:radical}
+Set \(A=B_1^{-1}B_2\) and \(p(t)=t^2+t+1\). Then \(A,I+A\) are
+invertible and
+\begin{equation}\label{eq:kernel}
+ C=[A(I+A)]^{-1}p(A)B_1^{-1},\qquad
+ \ker C=B_1\ker p(A).
+\end{equation}
+Consequently \(\rho\) is divisible by \(4\).
+If \(n\) is odd, then \(\rho\leq2n-6\).
+If \(n\) is even and \(\sum_\xi(-1)^{D(\xi)}<0\), then
+\(\rho\leq2n-4\).
+\end{proposition}
+\begin{proof}
+Writing \(B_2=B_1A\) and \(B_3=B_1(I+A)\) proves invertibility and
+\eqref{eq:kernel} by direct multiplication.
+Notice that the factor \(B_1\) in the kernel equality must be retained.
+For \(\beta(x,y)=x^{\mathsf T}B_1y\), the matrix \(A\) is self-adjoint,
+and \(\beta(v,Av)=0\), because \(B_2\) is alternating.
+Apply \cref{lem:paired}.
+A pair of \(p^k\)-blocks occupies \(4k\) dimensions and contributes
+\(4\) to \(\dim\ker p(A)\). A pair belonging to any other irreducible
+polynomial contributes zero to this kernel.
+There are no linear factors, and \(p\) is the only irreducible
+quadratic over \(\F_2\); every other pair therefore occupies at least
+six dimensions.
+
+If \(n\) is odd, the identity
+\(n=\sum_{\text{pairs}}k\deg f\) forces at least one pair with both
+\(k\) and \(\deg f\) odd. Its degree is at least three, so the
+non-\(p\) part occupies at least six dimensions.
+This gives \(\rho\leq2n-6\).
+For even \(n\), if \(\rho=2n\), then \(C=0\) and \(D\) is linear
+with \(D(0)=0\). Its sum is \(N\) or \(0\), never negative.
+Divisibility by four then yields \(\rho\leq2n-4\) in the negative case.
+\end{proof}
+
+\begin{proposition}[Bounds and exact equality tests]\label{prop:equality}
+On the maximum-\(s\) branch, the inequalities in \eqref{eq:bounds}
+hold. Their equality tests are:
+\begin{enumerate}[label=(\alph*)]
+\item For odd \(n\geq3\), either endpoint requires and is implied by:
+one pair of simple irreducible cubic blocks and all remaining pairs
+simple \(p\)-blocks; \(D|_{\ker C}=0\); and the Gauss sum of the
+six-dimensional quotient is respectively \(-8\) or \(+8\).
+\item For even \(n\geq4\), lower equality requires and is implied by:
+one pair of \(p^2\)-blocks and all remaining pairs simple \(p\)-blocks;
+\(D|_{\ker C}=0\); and the Gauss sum of the four-dimensional quotient
+is \(-4\).
+\item For even \(n\geq2\), upper equality holds if and only if \(D=0\).
+Equivalently \(p(A)=0\) and the remaining linear function \(D\)
+vanishes identically.
+\item For \(n=2\), \(C=0\); the lower value \(53\) holds if and only if
+\(D\) is a nonzero linear function, and the upper value \(69\) if and
+only if \(D=0\).
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+By \cref{lem:gauss}, the sum for \(D\) is zero or
+\(\pm2^{n+\rho/2}\), with the nonzero case exactly when \(D\) vanishes
+on its polar radical. Combining \cref{prop:radical} with
+\eqref{eq:P-dual} gives \(|\Pm|\leq2^{5n-3}\) for odd \(n\).
+For even \(n\), the positive bound is \(\Pm\leq2^{5n}\);
+a negative value satisfies \(\Pm\geq-2^{5n-2}\).
+Equation \eqref{eq:moment-max} gives the inequalities.
+
+For the odd endpoints, equality in magnitude forces \(\rho=2n-6\).
+The deficit \(2n-\rho\) contributed by a \(p^k\)-pair is \(4(k-1)\);
+a non-\(p\) pair contributes \(2k\deg f\geq6\).
+The odd-parity argument forces such a non-\(p\) pair, and deficit six
+therefore means precisely one simple cubic pair and otherwise simple
+\(p\)-pairs. The remaining equality conditions follow from the
+quadratic sum on the quotient. Conversely these conditions give exactly
+the asserted magnitude and sign.
+Deficit four similarly forces exactly one \(p^2\)-pair, proving (b)
+in both directions. To attain the even upper bound, every term
+\((-1)^{D(\xi)}\) must be \(+1\), so \(D=0\); this also forces
+\(p(A)=0\) by \eqref{eq:kernel}.
+In dimension four there is only one simple \(p\)-pair, hence \(C=0\);
+the two possible linear sums give (d).
+In dimension two the space of alternating forms has dimension one,
+so three nonzero scalar polars cannot all be nondegenerate.
+\end{proof}
+
+\section{Attainment of all numerical endpoints}\label{sec:attain}
+The following constructions prove the sharpness assertions without
+using the classification theorem. The trace-product positive blocks
+are standard Maiorana--McFarland constructions
+\citep[Theorem 2(i), p.~314]{CMP18}; the calculations retain the parameter
+correspondence and the signs needed here.
+
+\begin{lemma}[The four-dimensional blocks]\label{lem:H}
+Identify \(W\) with \(K=\F_4\) by
+\begin{equation}\label{eq:iota}
+ \iota(w)=(\Tr(w),\Tr(\alpha w)).
+\end{equation}
+The map \(\Hp(u,v)=uv\) has all scalar Gauss sums \(+4\), dual function \(D\equiv0\),
+and \(\Pm=2^{10}\). The map \(uv+u\) has the same polar and the same
+\(s=28\), but its Klein four count is \(53\), whereas that of \(\Hp\)
+is \(69\).
+\end{lemma}
+\begin{proof}
+For \(z\ne0\),
+\[
+ \sum_{u,v\in K}(-1)^{\Tr(zuv+\rho u+\sigma v)}
+       =4(-1)^{\Tr(\rho\sigma/z)}.
+\]
+The sum of \(z^{-1}\) over \(K^\times\) is zero, so the dual function
+vanishes identically and its integer character sum is \(16\).
+For \(uv+u=u(v+1)\), the zero set consists of the four vectors
+\((0,v)\) and the three vectors \((u,1)\) with \(u\ne0\).
+Its only totally zero two-dimensional \(\F_2\)-subspace is the line
+\(u=0\): two distinct nonzero \(u\)'s in the second set have
+a sum outside the zero set, and adding a nonzero vector from the
+line \(u=0\) also leaves the zero set.
+For \(uv\), the zero set is the union of the two coordinate lines,
+which are its only totally zero two-dimensional subspaces.
+In each case \(z=7\), and \eqref{eq:zero-planes} gives \(53\) and \(69\).
+\end{proof}
+
+\begin{lemma}[The six-dimensional endpoint blocks]\label{lem:F8}
+Let \(L=\F_8=\F_2[t]/(t^3+t+1)\), with absolute trace \(\Tr_8\).
+On \(L^2\) put
+\[
+ q_1(x,y)=\Tr_8(xy),\qquad
+ q_2(x,y)=\Tr_8(txy+cx+dy).
+\]
+For \(c=d=0\) and for \(c=1,\ d=t^2+t+1\), the three scalar polars are
+nondegenerate and all three original Gauss sums are \(+8\).
+The respective dual sums have character sums \(+8\) and \(-8\);
+therefore \(\Pm=+2^{12}\) and \(-2^{12}\).
+\end{lemma}
+\begin{proof}
+The three polar coefficients are \(1,t,1+t\), all nonzero.
+For \(a\ne0\), summing first over \(y\) gives
+\begin{equation}\label{eq:field-sum}
+ \sum_{x,y\in L}(-1)^{\Tr_8(axy+cx+dy+ux+vy)}
+ =8(-1)^{\Tr_8((u+c)(v+d)/a)}.
+\end{equation}
+When \(c=d=0\), the original sums are \(+8\).
+Let \(k=t^{-1}+(1+t)^{-1}=t+1\). The dual sum is then
+\(\Tr_8(tuv)\), of character sum \(+8\).
+For the second choice, \(d=t^5\),
+\(d/t=t^4=t^2+t\), and \(d/(1+t)=t^2\);
+both traces are zero, so the original signs again are positive.
+The complete dual sum is
+\[
+ D(u,v)=\Tr_8(tuv+kdu+kcv+kcd).
+\]
+Using \eqref{eq:field-sum}, its sum is
+\[
+ 8(-1)^{\Tr_8(cd(k+k^2/t))}
+ =8(-1)^{\Tr_8(cd\,k/t)}=-8,
+\]
+because \(k+k^2/t=k/t\), \((k/t)d=1\), and \(\Tr_8(1)=1\).
+This also shows that the polar of this \(D\) is nondegenerate.
+\end{proof}
+
+\begin{lemma}[An eight-dimensional lower block]\label{lem:attain8}
+There exists a square map on \(\F_2^8\) with all original scalar Gauss
+sums \(+16\) and with dual character sum \(-64\).
+\end{lemma}
+\begin{proof}
+Let \(U\) be multiplication by \(t\) on
+\(\F_2[t]/((t^2+t+1)^2)\), in its polynomial basis, and put
+\[
+ E=p(U),\qquad K_0=U^{-1}+(I+U)^{-1}.
+\]
+Here \(E^2=0\), \(\operatorname{rank}E=2\), and
+\(I+K_0=E\), since \(U(I+U)=I+E\).
+Indeed multiplication by \(p\) on \(\F_2[t]/(p^2)\) has image and
+kernel equal to the ideal \((p)\), each of binary dimension two.
+Choose \(0\ne c\in\im E\), \(z\) with \(z^{\mathsf T}c=1\), and
+\(d=E^{\mathsf T}z\). On \(\F_2^4\oplus\F_2^4\), take
+\[
+ q_1(x,y)=x^{\mathsf T}y,\qquad
+ q_2(x,y)=x^{\mathsf T}Uy+c^{\mathsf T}x+d^{\mathsf T}y.
+\]
+The matrices \(I,U,I+U\) are invertible, proving nondegeneracy of the
+three scalar polars. The two possibly nontrivial original Gauss signs
+are \(d^{\mathsf T}U^{-1}c\) and
+\(d^{\mathsf T}(I+U)^{-1}c\); both vanish because \(Ec=0\) and \(E\)
+commutes with these matrices. Thus all sums are \(+16\).
+
+The same summation used in \eqref{eq:field-sum}, now with ordinary
+binary dot products, gives the complete dual sum at covectors
+\((a,b)\) as
+\[
+ D(a,b)=b^{\mathsf T}(Ea+c)+z^{\mathsf T}Ea.
+\]
+Here \(K_0c=c\), \(EK_0=E\), and \(Ec=0\) account for the linear and
+constant terms. Summing over \(b\) leaves precisely the four solutions
+of \(Ea=c\). For each, \(z^{\mathsf T}Ea=1\).
+The sum is therefore \(-16\cdot4=-64\).
+\end{proof}
+
+\begin{proof}[Completion of the proof of \cref{thm:bounds}]
+For a common-target orthogonal sum, each scalar Walsh transform is a
+product of the corresponding transforms. The third moment \(\Pm\)
+and each original Gauss sum consequently multiply.
+For even \(n\), \(n/2\) copies of \(\Hp\) have original sums \(h\)
+and \(\Pm=2^{5n}\), giving the upper endpoint. Equivalently, in the notation of
+\citep[Theorem 2(i)]{CMP18}, take \(p=2\), \(s=2\), \(m=n\),
+\(E=\F_{2^n}\), and \(\pi(y)=y\), with \(g=0\).
+Then \(\Tr_{E/K}(xy)\) becomes \(\Hp^{\perp n/2}\) in a pair of
+trace-dual \(K\)-bases. The condition \(2\mid n\) is essential to this
+subfield description.
+For odd \(n\), one of the blocks in \cref{lem:F8} together with
+\((n-3)/2\) copies of \(\Hp\), all with the same ordered target,
+has \(\Pm=\pm2^{5n-3}\).
+For even \(n\geq4\), the block in \cref{lem:attain8} with
+\((n-4)/2\) copies of \(\Hp\) has \(\Pm=-2^{5n-2}\).
+All original Gauss sums in these constructions are \(+h\).
+Every scalar polar remains nondegenerate, so \cref{prop:strict}
+realizes actual groups in the asserted class.
+Finally \cref{lem:H} supplies both \(n=2\) endpoints.
+Together with \cref{prop:equality}, this proves every assertion of
+\cref{thm:bounds}.
+\end{proof}
+\section{The eight-dimensional square maps}\label{sec:core}
+In this section \(p(t)=t^2+t+1\). We first normalize the ordered
+polar pair, keeping the target coordinates fixed.
+
+\begin{lemma}[A simultaneous polar model]\label{lem:polar-model}
+Suppose \(A=B_1^{-1}B_2\) has one pair of \(p^2\)-blocks and \(r\)
+pairs of \(p\)-blocks. There is a common orthogonal decomposition
+\[
+ V=V_0\oplus V_1,\qquad \dim_{\F_2}V_0=8,\quad
+ \dim_{\F_2}V_1=4r,\quad B(V_0,V_1)=0.
+\]
+Put \(R=\F_2[t]/(p^2)\), \(\eps=p(t)\), and
+\(\alpha=t+\eps=t^2+1\). Then
+\(R=K[\eps]/(\eps^2)\), \(K=\F_4\).
+After input changes and the single common target identification
+\eqref{eq:iota}, the restrictions of \(Q\) have the forms
+\begin{align}
+ Q^{(0)}={}&ad+bc+\Tr(ac)+fa+ga^2+\ell c+mc^2
+                    +\eta b+kb^2+\theta d+jd^2,\label{eq:all-core}\\
+ Q^{(1)}={}&\sum_{\nu=1}^r
+   (u_\nu v_\nu+F_\nu u_\nu+G_\nu u_\nu^2
+                     +L_\nu v_\nu+M_\nu v_\nu^2),\label{eq:all-ss}
+\end{align}
+where all coefficients lie in \(K\).
+These include all \(\F_2\)-linear refinements of the fixed polars.
+Each nonzero scalar polar of each nonempty restriction is
+nondegenerate.
+\end{lemma}
+\begin{proof}
+Use \cref{lem:paired} to select the paired \(p^2\)-cyclic modules
+as \(V_0\). Their \(\beta=B_1\)-orthogonal complement \(V_1\) is
+\(A\)-invariant by self-adjointness. Hence the decomposition is
+orthogonal for both \(B_1\) and \(B_2\), and thus for \(B\).
+Each scalar polar is a nondegenerate block diagonal form.
+The polar identity already gives \(Q=Q^{(0)}\perp Q^{(1)}\);
+it does not yet imply any sign condition on the restrictions.
+
+Let \(\lambda:R\to\F_2\) extract the coefficient of \(t^3\).
+The pairing \(\lambda(xy)\) is nondegenerate: if a polynomial
+\(x\ne0\) has degree \(j\leq3\), multiplying by \(t^{3-j}\) gives
+coefficient \(1\) at degree three without a reduction.
+On a paired cyclic summand \(R^2\), the balanced pairing for \(B_1\)
+has the form \(\lambda'(xy'+x'y)\).
+Nondegeneracy writes \(\lambda'(z)=\lambda(ez)\) for a unit \(e\in R\);
+otherwise multiplication by \(e\) would have a kernel.
+Rescaling one input generator by \(e^{-1}\) normalizes the pair to
+\begin{equation}\label{eq:R-polar}
+ B((x,y),(x',y'))=
+ \bigl(\lambda(xy'+x'y),\lambda(t(xy'+x'y))\bigr).
+\end{equation}
+This uses only input changes. On each simple \(p\)-pair the same
+argument, using the nondegenerate trace pairing on \(K\), gives
+\((\Tr(uv'+u'v),\Tr(\alpha(uv'+u'v)))\), in the same ordered target.
+
+The relations \(\eps^2=0\), \(\alpha^2+\alpha+1=0\) give the asserted
+description of \(R\). Direct evaluation on the basis
+\(1,\alpha,\eps,\alpha\eps\) gives
+\[
+ \lambda(a+\eps b)=\Tr(b),\qquad
+ \lambda(t(a+\eps b))=\Tr(a+\alpha b).
+\]
+For \(x=a+\eps b,\ y=c+\eps d\), the base refinement
+\((\lambda(xy),\lambda(txy))\) therefore becomes
+\(ad+bc+\Tr(ac)\) under \(\iota^{-1}\).
+On a simple pair the base refinement becomes \(uv\).
+
+Two \(\F_2\)-quadratic maps with the same polar differ by an
+\(\F_2\)-linear map. Every such map \(K\to K\) is uniquely
+\(x\mapsto ux+vx^2\): the map from the two coefficients is injective
+by evaluating at \(1,\alpha\), and both spaces have \(\F_2\)-dimension
+four. Applying this independently to all coordinates proves
+\eqref{eq:all-core} and \eqref{eq:all-ss}.
+No assumption of \(K\)-homogeneity has been made.
+\end{proof}
+
+The next formula is the specialization of the general
+Maiorana--McFarland formula in \citep[equation (4), p.~313]{CMP18}.
+The common \(\F_{16}\) coordinates and the arbitrary function \(g\)
+in that substitution are recorded in \cref{app:MM}. We also give a
+direct sum calculation to fix the Fourier convention and the constants.
+
+\begin{lemma}[The complete core phases]\label{lem:core-phase}
+For \eqref{eq:all-core} and \(z\in K^\times\), let \(\Walsh_z\) be
+the Walsh transform of \(\Tr(zQ^{(0)})\). Use the Fourier
+functional \(\Tr(\rho a+\sigma b+\tau c+\upsilon d)\), and write
+\(\Walsh_z=16(-1)^{E_z}\). With \(\kappa_z=\Tr(z)\), one has
+\begin{align}
+ a_z&=\upsilon/z+\theta+zj^2,\qquad
+ c_z=\sigma/z+\eta+zk^2,\label{eq:az}\\
+ E_z&=\Tr\bigl(\kappa_z a_zc_z+
+       (\rho+zf+z^2g^2)a_z+(\tau+z\ell+z^2m^2)c_z\bigr).
+                                                    \label{eq:raw-core}
+\end{align}
+Phase additions, including \(\sum E_z\) and \(\gamma\) below, are in
+\(\F_2\); sums of \((-1)^{E_z}\) are integer character sums.
+In particular the \emph{unadjusted} sum of these three phases is
+\begin{align}
+ \sum_{z\ne0}E_z
+ &=\Tr\bigl(\sigma\upsilon+(f+\eta)\upsilon
+          +(\ell+\theta)\sigma+\theta\rho+\eta\tau\bigr)+\gamma,
+                                                        \label{eq:core-sum}\\
+ \gamma&=\Tr(\theta k^2+\eta j^2+jk+gj+mk)
+         =\sum_{z\ne0}E_z(0).                         \label{eq:gamma}
+\end{align}
+These formulas hold without a hypothesis on the original Gauss signs.
+\end{lemma}
+\begin{proof}
+The identity \(\Tr(za^2)=\Tr(z^2a)\) over \(K\) moves each
+squared-variable linear term into the ordinary Fourier coefficient.
+Summing first over \(b,d\) forces exactly the two equations in
+\eqref{eq:az} and leaves a factor \(4^2=16\).
+The remaining exponent is \eqref{eq:raw-core}.
+For the sum over \(z\in K^\times\), use
+\[
+ \sum z=\sum z^2=\sum z^{-1}=0,\quad \sum z^3=1,\quad
+ \sum\kappa_z=0,
+\]
+and
+\[
+ \sum\kappa_z/z=\sum\kappa_z/z^2
+ =\sum\kappa_z z=\sum\kappa_z z^2=1.
+\]
+Expansion gives the nonconstant terms in \eqref{eq:core-sum}.
+The constant terms are
+\(\Tr(\theta k^2+\eta j^2+j^2k^2+g^2j^2+m^2k^2)\),
+which is \eqref{eq:gamma} since the trace is invariant under squaring.
+This proves the formula including its constant.
+\end{proof}
+
+\begin{lemma}[The anisotropic sign obstruction]\label{lem:obstruction}
+Suppose \(\eta=\theta=0\) in \eqref{eq:all-core}, and all three
+original Gauss sums have the same sign \((-1)^\delta\).
+Then
+\begin{equation}\label{eq:comp}
+ fj^2+\ell k^2=jk,\qquad \Tr(gj+mk+jk)=\delta.
+\end{equation}
+If additionally \(\Tr(f\ell)=1\), then \(j=k=0\) and \(\delta=0\).
+\end{lemma}
+\begin{proof}
+At the Fourier origin, \(a_z=zj^2\) and \(c_z=zk^2\).
+Put \(e=jk,\ u=fj^2+\ell k^2,\ v=gj+mk\).
+Using
+\(\Tr(z)\Tr(ze)=\Tr(z^2e)+\Tr(e)\) for \(z\ne0\), formula
+\eqref{eq:raw-core} becomes
+\[
+ E_z(0)=\Tr(z^2(u+e))+\Tr(v+e).
+\]
+The three values equal \(\delta\) precisely when \(u+e=0\) and
+\(\Tr(v+e)=\delta\): a nonzero linear functional on \(K\) is not
+constant on \(K^\times\).
+This proves \eqref{eq:comp}.
+
+If \(\Tr(f\ell)=1\), then \(f\ne0\), and the binary \(K\)-quadratic
+form \(fX^2+XY+\ell Y^2\) is anisotropic.
+Indeed a nonzero solution with \(Y\ne0\) would give, on setting
+\(w=fX/Y\), the equation \(w^2+w+f\ell=0\), contradicted by its trace.
+If \(Y=0\), then \(X=0\).
+The first equation in \eqref{eq:comp} therefore forces \(j=k=0\);
+the second now forces \(\delta=0\).
+\end{proof}
+
+With the equality polar fixed, the following selection is a short
+application of the preceding dual formula, the radical criterion in
+\cref{lem:gauss}, and the binary Arf test in \cref{lem:obstruction}.
+
+\begin{proposition}[The \(96\) core refinements]\label{prop:96}
+In dimension eight, the maps with maximum \(s=304\) and
+\(\vfour=4371\), in the fixed polar coordinates
+\eqref{eq:all-core}, are exactly
+\begin{equation}\label{eq:96}
+ Q_{f,g,\ell,m}=ad+bc+\Tr(ac)+fa+ga^2+\ell c+mc^2,
+       \qquad \Tr(f\ell)=1.
+\end{equation}
+There are \(96\) such coordinate maps.
+Every dimension-eight lower-equality map can be put in these
+coordinates.
+\end{proposition}
+\begin{proof}
+By \cref{prop:equality}(b), every lower-equality polar has exactly
+one pair of \(p^2\)-blocks. Thus \cref{lem:polar-model} covers all of
+them, rather than just a selected construction.
+Maximum \(s\) means \(E_z(0)=0\) for all \(z\ne0\), hence \(\gamma=0\).
+The radical of the polar in \eqref{eq:core-sum} consists of the
+directions \(\rho,\tau\), with \(\sigma=\upsilon=0\).
+The radical-vanishing condition therefore forces
+\(\eta=\theta=0\).
+Summing over \(\rho,\tau\) and then completing the square in
+\(\sigma,\upsilon\) gives
+\begin{equation}\label{eq:core-G}
+ \sum_{\rho,\sigma,\tau,\upsilon}(-1)^D
+       =64(-1)^{\Tr(f\ell)}.
+\end{equation}
+Lower equality requires \(-64\), hence \(\Tr(f\ell)=1\).
+Apply \cref{lem:obstruction} with \(\delta=0\) to get \(j=k=0\).
+This proves necessity of \eqref{eq:96}.
+Conversely, for \eqref{eq:96}, formula \eqref{eq:raw-core} at the
+origin gives all three signs positive, and \eqref{eq:core-G} is
+\(-64\). The counting identity gives
+\(\vfour=M_4-2^8=4627-256=4371\).
+There are three choices for \(f\ne0\), two for \(f\ell\) with trace
+one, and four each for \(g,m\), giving \(3\cdot2\cdot4^2=96\).
+\end{proof}
+
+The local input changes below are instances of the transformation
+framework of \citep[Propositions 5--6, pp.~12--14]{MPG13} and
+\citep[Propositions 4.5 and 4.7, p.~17]{PFMR14}.
+The last distinction is the classical binary Arf class over \(K\).
+We retain the explicit changes, including their induced linear terms.
+
+\begin{proposition}[Explicit transitivity]\label{prop:orbit}
+All \(96\) maps in \eqref{eq:96} are strictly equivalent to \(\Qstar\),
+using only input transformations that preserve both scalar polars
+and leave the target fixed.
+\end{proposition}
+\begin{proof}
+Every matrix in \(\SL_2(R)\), acting on
+\((x,y)=(a+\eps b,c+\eps d)\), preserves
+\(xy'+x'y\) and therefore both forms in \eqref{eq:R-polar}.
+Starting with \eqref{eq:96}, make the following pullback changes.
+\begin{enumerate}[label=\arabic*.]
+\item The matrix
+\[
+ M_1=\begin{pmatrix}1&\eps m\\ \eps g&1\end{pmatrix}
+\]
+has determinant one and changes \(b\) to \(b+mc\), \(d\) to \(d+ga\).
+Substitution cancels both \(ga^2\) and \(mc^2\).
+\item The matrix \(M_2=\operatorname{diag}(f^{-1},f)\) changes
+the two remaining coefficients to \(1,f\ell\).
+The latter is \(\alpha\) or \(\alpha^2\).
+\item If \(f\ell=\alpha^2\), use
+\[
+ M_3=\begin{pmatrix}1&\alpha\\0&1\end{pmatrix}.
+\]
+The new coefficient of \(c\) is
+\(\alpha^2+\alpha+\alpha^2=\alpha\), and an extra
+\(\alpha c^2\) is introduced.
+The matrix \(M_4=\begin{pmatrix}1&\eps\alpha\\0&1\end{pmatrix}\)
+cancels this last term.
+\end{enumerate}
+The resulting map is exactly \eqref{eq:representatives}.
+All the operations act on the entire quadratic map. In particular
+the linear correction generated by pulling back the base map
+\(ad+bc+\Tr(ac)\) has been included, not discarded.
+Each operation has target transformation \(T=\id_W\).
+\end{proof}
+
+\begin{remark}\label{rem:isometry}
+In fact the full componentwise isometry group of \eqref{eq:R-polar}
+is \(\SL_2(R)\). Such an isometry commutes with \(A\), hence is
+\(R\)-linear. Its determinant \(d\) satisfies
+\(\lambda((d-1)r)=0\) for every \(r\in R\), forcing \(d=1\).
+There are \(16^2-4^2=240\) possible unimodular first columns, and
+\(16\) second columns with determinant one for each: a unimodular
+column has a unit coordinate, so its determinant map \(R^2\to R\)
+is onto and each fibre has size \(16\). Thus its order is
+\(3840\). This observation is not needed to infer transitivity from
+the explicit changes above. Allowing additional target changes cannot
+split an already single orbit. Thus no uncomputed subgroup orbit is
+being mistaken for a full classification.
+\end{remark}
+
+For a concrete group \(G_*\), take \(K^4\times K\) and use
+\eqref{eq:group-law} with
+\begin{equation}\label{eq:explicit-G}
+ F((a,b,c,d),(a',b',c',d'))=
+ ad'+bc'+\Tr(ac')+(aa')^2+\alpha(cc')^2.
+\end{equation}
+This is \(\F_2\)-bilinear, and its diagonal is \(\Qstar\).
+The scalar polars in \eqref{eq:R-polar} are nondegenerate because
+\(1,t,1+t\) are units in \(R\).
+Consequently \cref{prop:strict} and
+\cref{prop:96,prop:orbit} prove \cref{thm:classification} for \(n=4\),
+including existence of the group of order \(1024\).
+
+\section{The common core in every even half-dimension}
+\label{sec:classification}
+For the remainder of this section let \(n=4+2r\), \(r\geq0\).
+Use the common-target coordinates of \cref{lem:polar-model}.
+
+\begin{lemma}[The semisimple phases]\label{lem:ss-phase}
+For \eqref{eq:all-ss}, the scalar Walsh transform at the functional
+\(\Tr\sum_\nu(\rho_\nu u_\nu+\sigma_\nu v_\nu)\) is
+\(4^r(-1)^{E_{1,z}}\), where
+\begin{equation}\label{eq:ss-phase}
+ E_{1,z}=
+ \sum_\nu\Tr\left(
+ \frac{(\rho_\nu+zF_\nu+z^2G_\nu^2)
+       (\sigma_\nu+zL_\nu+z^2M_\nu^2)}{z}\right).
+\end{equation}
+Its phase sum is
+\begin{equation}\label{eq:ss-sum}
+ D_1=\sum_{z\ne0}E_{1,z}
+     =\Tr\sum_\nu(L_\nu\rho_\nu+F_\nu\sigma_\nu+G_\nu M_\nu).
+\end{equation}
+If \(F_\nu=L_\nu=0\) for all \(\nu\), then each original Gauss sum has
+the same sign \((-1)^\delta\), where
+\(\delta=\Tr\sum_\nu G_\nu M_\nu\), and \(D_1\equiv\delta\).
+\end{lemma}
+\begin{proof}
+This is also \citep[equation (4), p.~313]{CMP18}: on each plane use
+\(p=2\), \(m=2\), \(s=1\), scalar parameter \(1\), the pairing
+\(\Tr(\rho u+\sigma v)\), and
+\[
+ \pi_z(v)=zv+zF+z^2G^2,\qquad
+ g_z(v)=(zL+z^2M^2)v.
+\]
+The permutation \(\pi_z\) is affine; the original squared-variable
+terms have been moved by the trace identity, not omitted.
+Substitution of \(\pi_z^{-1}(\rho)\) in that formula gives
+\eqref{eq:ss-phase}, with its origin phase intact.
+Summing its expansion over \(K^\times\), the terms with \(z,z^2,z^{-1}\)
+vanish and \(z^3=1\); trace invariance under squaring gives
+\eqref{eq:ss-sum}.
+With \(F_\nu=L_\nu=0\), evaluating \eqref{eq:ss-phase} at the origin
+gives \(\Tr\sum_\nu G_\nu M_\nu=\delta\) for each \(z\).
+\end{proof}
+
+The lower-equality sign is essential in the following deduction from
+the two phase formulas. Positivity of the whole map alone does not
+give positivity on each restriction.
+
+\begin{lemma}[Exclusion of core--remainder negative-sign compensation]\label{lem:no-comp}
+Suppose \(Q=Q^{(0)}\perp Q^{(1)}\) is in the form
+\eqref{eq:all-core}--\eqref{eq:all-ss}, all three original Gauss sums
+are \(+2^n\), and
+\begin{equation}\label{eq:lower-dual}
+ D|_{\ker C}=0,\qquad
+ \sum_{\xi\in V^*}(-1)^{D(\xi)}=-2^{2n-2}.
+\end{equation}
+Then
+\[
+ \eta=\theta=j=k=0,\quad \Tr(f\ell)=1,\quad
+ F_\nu=L_\nu=0\ (\text{all }\nu),\quad
+ \Tr\sum_\nu G_\nu M_\nu=0.
+\]
+In particular both restrictions separately have all three original
+Gauss sums positive.
+\end{lemma}
+\begin{proof}
+Write the \emph{unadjusted} phases on the two blocks as \(E_{0,z}\)
+and \(E_{1,z}\). The product rule for Walsh transforms and global
+maximality imply only
+\begin{equation}\label{eq:matching-signs}
+ E_{0,z}(0)=E_{1,z}(0)\qquad(z\ne0).
+\end{equation}
+The two sides are not yet known to be zero or to be independent of \(z\).
+The global normalized dual sum is
+\(D=D_0+D_1\), where \(D_j=\sum_{z\ne0}E_{j,z}\).
+It has \(D(0)=0\), although its block summands may have constants.
+
+The polar of \(D_1\) is zero by \eqref{eq:ss-sum}, so the whole
+space \(V_1^*\) is in the radical of the global polar \(C\).
+The equation \(D(0,\xi_1)=0\) for every \(\xi_1\in V_1^*\) makes
+\(D_1\) constant. Trace nondegeneracy in \eqref{eq:ss-sum} forces
+\(F_\nu=L_\nu=0\) for all \(\nu\).
+By \cref{lem:ss-phase}, put
+\(\delta=\Tr\sum_\nu G_\nu M_\nu\); then
+\(D_1\equiv\delta\) and \(E_{1,z}(0)=\delta\) for every \(z\).
+Equation \eqref{eq:matching-signs} now gives
+\(E_{0,z}(0)=\delta\), and hence \(\gamma=\delta\) in
+\eqref{eq:core-sum}.
+
+The remaining radical directions are the core coordinates
+\(\rho,\tau\). On them the global \(D\) is
+\(\Tr(\theta\rho+\eta\tau)+\delta+\delta\).
+Radical vanishing forces \(\eta=\theta=0\).
+The constants cancel between the blocks; they have not been
+individually suppressed. The complete phase is now
+\[
+ D=\Tr(\sigma\upsilon+f\upsilon+\ell\sigma),
+\]
+independent of \(V_1^*\), \(\rho\), and \(\tau\).
+Its character sum is
+\[
+ 2^{4r}\,64(-1)^{\Tr(f\ell)}.
+\]
+The \emph{negative} sign in \eqref{eq:lower-dual} therefore forces
+\(\Tr(f\ell)=1\).
+The original core signs all equal \((-1)^\delta\), so
+\cref{lem:obstruction} forces \(j=k=0\) and \(\delta=0\).
+This proves every assertion. Empty sums give \(\delta=0\) when \(r=0\).
+\end{proof}
+
+\begin{lemma}[The positive remainder]\label{lem:hyperbolic}
+A map
+\begin{equation}\label{eq:positive-remainder}
+ q(u,v)=\sum_{\nu=1}^r
+ (u_\nu v_\nu+G_\nu u_\nu^2+M_\nu v_\nu^2),\qquad
+ \Tr\sum_\nu G_\nu M_\nu=0,
+\end{equation}
+is isometric over \(K\), with target unchanged, to
+\(\Hp^{\perp r}\).
+\end{lemma}
+\begin{proof}
+At this stage, unlike \eqref{eq:all-ss}, the map really is a
+homogeneous quadratic form over \(K\).
+The hyperbolic/elliptic classification recalled in \citep[p.~509]{AFH24}
+now applies over \(K\); equivalently its component signs can be read
+from \citep[Theorem 2.2, pp.~511--512]{AFH24} with a trace-compatible
+pairing. For \(r\geq1\), identify \(K^{2r}\) linearly with
+\(\F_{4^{2r}}\): the theorem's base field is \(K\) and its extension
+degree is \(2r\). The required \(K\)-homogeneity has just been established,
+rather than inferred from the notation in \cref{lem:polar-model}.
+Its polar is the nondegenerate \(K\)-symplectic form
+\(\sum_\nu(u_\nu v'_\nu+u'_\nu v_\nu)\).
+By \cref{lem:ss-phase}, all three scalar Gauss sums are
+\(+4^r\), and its zero count is
+\[
+ \frac{4^{2r}+3\cdot4^r}{4}.
+\]
+For \(r\geq1\) this exceeds one, so choose a nonzero isotropic vector
+\(u\). Choose \(v\) with \(B_K(u,v)=1\) and replace it by
+\(v+q(v)u\). Homogeneity and \(q(u)=0\) show that the new vector is
+isotropic and still pairs to one with \(u\). They span a hyperbolic
+\(K\)-plane. Its \(K\)-orthogonal complement has nondegenerate polar
+and all scalar Gauss sums \(+4^{r-1}\), by dividing out the three
+\(+4\) factors. Repetition yields \(r\) hyperbolic planes.
+The resulting input change is \(K\)-linear symplectic and fixes \(W\).
+The case \(r=0\) is the empty space.
+\end{proof}
+
+\begin{proof}[Proof of \cref{thm:classification}]
+Assume (i). By \cref{prop:equality}(b), the polar has one pair of
+\(p^2\)-blocks and \(r=(n-4)/2\) simple \(p\)-pairs, the global
+\(D\) vanishes on its radical, and its character sum is
+\(-2^{2n-2}\).
+The common model from \cref{lem:polar-model} applies.
+By \cref{lem:no-comp}, the core is in \eqref{eq:96} and the remainder
+is in \eqref{eq:positive-remainder}.
+Normalize the core by \cref{prop:orbit} and the remainder by
+\cref{lem:hyperbolic}. Both input changes have \(T=\id_W\).
+Their block diagonal sum is thus a legitimate transformation of the
+whole square map, proving (ii).
+
+Conversely, the three scalar polars of
+\(\Qstar\perp\Hp^{\perp r}\) are blockwise nondegenerate.
+Its original Gauss sums are \(16\cdot4^r=2^n\), so \(s=N+3h\).
+Its dual character sum is
+\(-64\cdot16^r=-2^{2n-2}\).
+Thus \(\Pm=-2^{5n-2}\), and \eqref{eq:moment-max} gives exactly
+\(\vfour=M_n-2^{3n-4}\). Strict equivalence preserves these quantities.
+
+The group \(H(K)\) can be written on \(K^2\times K\) with
+\[
+ ((u,v),w)((u',v'),w')=
+ ((u+u',v+v'),\,w+w'+uv').
+\]
+It has square map \(uv\), order \(64\), and center \(K\).
+By \cref{lem:central,prop:strict}, (ii) is equivalent to (iii).
+In the central product the kernel has order \(4^r\), and the order is
+\[
+ 1024\cdot64^r/4^r=2^{10+4r}=2^{2n+2}.
+\]
+This proves all directions and the uniqueness of the group type.
+It asserts no uniqueness of a chosen core subspace.
+\end{proof}
+
+\begin{remark}[Target changes and mixed input changes]\label{rem:target}
+The preceding proof already normalized both restrictions with the same
+target fixed. Center identifications do not create extra types here:
+every member of \(\GL_{\F_2}(K)\) is \(T(w)=c w^\sigma\), with
+\(c\in K^\times\) and \(\sigma=\id\) or the Frobenius square.
+These are six distinct maps, all the elements of \(\GL_2(\F_2)\).
+Each has a lift on a positive plane,
+\[
+ (u,v)\longmapsto(cu^\sigma,v^\sigma),\qquad
+ \Hp(cu^\sigma,v^\sigma)=T(\Hp(u,v)).
+\]
+Thus a different center gluing on each positive factor can be absorbed
+by its input change, without imposing an incompatible target change
+on the core.
+
+The remainder in \cref{lem:hyperbolic} need not consist of positive
+planes in an initially chosen splitting.
+For \(A_-(u,v)=uv+u^2+\alpha v^2\), each scalar original sign is
+negative, but \(A_-\perp A_-\) is isometric to
+\(\Hp\perp\Hp\) by the same lemma.
+For example, a \(K\)-linear change with columns
+\[
+ (0,1,0,1),\quad(0,1,1,1),\quad(1,0,1,0),\quad(\alpha,1,\alpha,0)
+\]
+pulls the former back to the latter. Permitting such mixed input
+changes is necessary; initial plane signs are not invariants of
+the whole remainder. In particular \(\Qstar\perp A_-\perp A_-\)
+also attains the corresponding lower bound, by this target-fixed
+isometry and \cref{thm:classification}.
+\end{remark}
+
+\section{Two distinct limitations of stronger conclusions}\label{sec:examples}
+\begin{example}[Maximality does not pass to orthogonal blocks]
+\label{ex:compensation}
+On \(K^4\) and \(K^2\), with the same target \(K\), take
+\[
+ Q_0^-=ad+bc+\Tr(ac)+\alpha a^2+d^2,\qquad
+ A_-(u,v)=uv+u^2+\alpha v^2.
+\]
+The three scalar polars of each are nondegenerate.
+In the core parameters these are \(g=\alpha,\ j=1\), with
+\(f=\ell=m=\eta=k=\theta=0\).
+Formula \eqref{eq:raw-core} gives each original core sign negative,
+and \cref{lem:ss-phase} gives each original plane sign negative.
+Their Gauss sums are therefore respectively \(-16\) and \(-4\),
+while the product \(Q_0^-\perp A_-\) has three original sums \(+64\).
+The two restrictions have \(s=208\) and \(s=4\), although the whole
+group of order \(16384\) has the maximum \(s=4288\).
+
+Here \(D_0=\Tr(\sigma\upsilon)+1\) and \(D_1=1\).
+The global dual character sum is \(+1024\), not \(-1024\).
+Since \(M_6=803403\), equation \eqref{eq:moment-max} gives
+\[
+ \vfour(Q_0^-\perp A_-)=819787,\qquad
+ \vfour(\Qstar\perp\Hp)=787019.
+\]
+Thus this is a counterexample to blockwise positivity inferred from
+maximum \(s\) alone, not to \cref{thm:classification}.
+The negative lower-equality sign in \cref{lem:no-comp} cannot be omitted.
+\end{example}
+
+\begin{lemma}[The polar obstruction survives target changes]
+\label{lem:mobius}
+For a nondegenerate scalar pencil, a target basis change
+\(\begin{psmallmatrix}a&b\\c&d\end{psmallmatrix}\in\GL_2(\F_2)\)
+changes \(A=B_1^{-1}B_2\), up to input similarity, to
+\begin{equation}\label{eq:mobius}
+ (aI+bA)^{-1}(cI+dA).
+\end{equation}
+The operator is semisimple before this change if and only if it is
+semisimple afterwards.
+\end{lemma}
+\begin{proof}
+The new polar pair is \(B_1(aI+bA), B_1(cI+dA)\).
+Its first member is nondegenerate by hypothesis, proving both the
+formula and the invertibility of the denominator.
+A semisimple operator diagonalizes over an algebraic closure, so any
+defined rational function of it is semisimple. Applying the inverse
+target transformation proves the converse. Input similarity also
+preserves semisimplicity.
+\end{proof}
+
+\begin{example}[An odd-half-dimension lower equality without the core]
+\label{ex:odd}
+Let \(L=\F_8=\F_2[t]/(t^3+t+1)\), \(d=t^2+t+1\).
+In \(V=L^2\oplus K^2\), with target \(W=\F_2^2\), take
+\begin{align*}
+ Q_{\mathrm{odd}}(x,y,u,v)=
+ \bigl(&\Tr_8(xy)+\Tr(uv),\\
+       &\Tr_8(txy+x+dy)+\Tr(\alpha uv)\bigr).
+\end{align*}
+By \cref{lem:F8,lem:H}, its scalar polars are nondegenerate,
+its original sums are \(8\cdot4=32\), and its dual character sum is
+\(-8\cdot16=-128\). Thus \(n=5\), the group order is \(4096\),
+and
+\[
+ s=1120,\qquad \vfour=M_5-2^{10}=57467-1024=56443.
+\]
+It attains the odd lower endpoint in \cref{thm:bounds}.
+
+Its \(A\) has a pair of simple \(t^3+t+1\)-blocks and a pair of
+simple \(p\)-blocks, and is semisimple: under the trace pairing on
+\(\F_8^2\), the two scalar polars correspond to multiplication by
+\(1\) and \(t\), so \(A\) is multiplication by \(t\) on both
+coordinates; on \(K^2\) it is multiplication by \(\alpha\).
+The core \(\Qstar\) has a pair of \(p^2\)-blocks and is not semisimple.
+If \(Q_{\mathrm{odd}}\) had a common orthogonal factor strictly
+equivalent to \(\Qstar\), the corresponding restriction of its \(A\)
+would be nonsemisimple after a common target change.
+This contradicts \cref{lem:mobius}. It therefore has no such factor,
+even with an unrestricted remaining summand.
+The same polar obstruction applies to the odd equality types in
+\cref{prop:equality}(a); it does not classify their complete square maps.
+\end{example}
+
+\section{Connections with existing results}\label{sec:context}
+The quadratic-map and central-product correspondences used in
+\cref{prop:strict,lem:central} are standard. For the latter the precise
+source is \citep[Lemma 2.4, pp.~6--7]{KK12}, numbered according to its
+arXiv v1 PDF. No strongly real hypothesis is required there.
+
+The maximum-\(s\) branch is exactly the totally orthogonal branch
+within \eqref{eq:class}. There are \(N\) linear characters with
+Frobenius--Schur indicator \(+1\), and three nonlinear characters
+\(\chi_\lambda\) of degree \(h\), inflated from the three extraspecial
+quotients \citep[Proposition 3.5 and Remark 3.6, p.~8]{KK15}.
+Their squared degrees sum to \(N+3h^2=|G|\), proving exhaustiveness.
+The indicator definition yields
+\[
+ \nu(\chi_\lambda)
+ =\frac1{4N}\sum_{g\in G}\chi_\lambda(g^2)
+ =\frac{\Gauss(\lambda Q)}h.
+\]
+Thus all indicators are \(+1\) exactly when \(s=N+3h\).
+This is the specialization of the Arf criterion restated in
+\citep[Theorem 4.1, p.~12]{KK12}, where it is attributed to
+Zahinda's Theorem 3.5. We use that attribution through the cited source,
+not as a claim to have checked every result of the original paper.
+
+For binary output dimension two, the three actual scalar duals are
+distinct and nonzero: equality of two would contradict Fourier
+inversion, and the dual of a bent function is bent. Their set, with
+zero adjoined, is a two-dimensional function space if and only if their
+sum \(D\) is identically zero. Consequently \(D\equiv0\) is exactly
+vectorial dual-bent closure in \citep[Definition 1, p.~309]{CMP18} in
+this situation. Any relabeling of the three nonzero components comes
+from \(\GL_2(\F_2)\). The matrix identity
+\[
+ B_1^{-1}+B_2^{-1}=B_1^{-1}(B_1+B_2)B_2^{-1}
+\]
+makes the sum of two quadratic duals bent, but does not identify it
+with the third dual.
+
+On the maximum-\(s\) branch, \(D\equiv0\) supplies the same-label
+vectorial dual and satisfies Condition A of \citep[p.~9]{WFW23}:
+take \(p=2\), input dimension \(2n\), output dimension \(2\leq n\),
+regularity coefficient \(\epsilon=1\), and \(F=Q\), with \(F(0)=0\).
+For \(I=\{0\}\), \citep[Theorem 6, equation (35), pp.~23--24]{WFW23}
+gives a partial difference set \(E=Q^{-1}(0)\setminus\{0\}\) with
+\[
+ z=\frac{N+3h}{4},\qquad k=z-1,\qquad
+ \lambda=\frac N{16}+\frac{3h}{4}-2.
+\]
+If \(L\) counts the totally zero binary planes, the difference-set
+parameter counts their six ordered bases, giving \(6L=k\lambda\).
+Therefore the elementary lift count in \cref{lem:count} gives
+\[
+ \vfour=16L+6z-5=M_n+2^{3n-2}.
+\]
+The \(D\equiv0\) upper endpoint is thus a direct corollary. Binary
+regularity does not assert a positive zero-frequency Gauss sum on
+every orthogonal restriction. Neither \(C=0\) nor \(\Gauss(D)=0\)
+can replace the condition \(D\equiv0\).
+
+The lower-equality maps have \(\operatorname{rank}C=4\), so they are
+not themselves vectorial dual-bent. The completed-class result of
+\citep[Theorem 1, p.~311]{CMP18} concerns sets of scalar functions,
+not a common strict equivalence of their simultaneous refinements.
+Even allowing the full extended affine action
+\(\widetilde Q(x)=TQ(Sx+a)+Lx+b\), the quadratic polars transform as
+\(\widetilde B_\lambda=S^{\mathsf T}B_{T^*\lambda}S\), whence
+\(\widetilde C=S^{-1}CS^{-\mathsf T}\). Translation and linear terms
+do not change these polars. Thus rank four also prevents a simultaneous
+extended-affine representative from becoming a closed rank-zero source.
+This does not deny separate membership of scalar components in a
+completed class. The group equivalence throughout remains
+\eqref{eq:strict}, which is more restrictive.
+
+The polar decompositions are instances of alternating-pencil theory.
+\citep[Theorem 1.2]{LM18} enumerates isoclinism classes; its
+Theorems 3.7--3.8 also impose exponent \(p\). We do not use them as
+isomorphism classifications for the exponent-four groups here.
+In characteristic two, homogeneous binary quadratic polynomials can
+represent linear functions by diagonal squares. The local and
+mixed-length framework in \citep[Section 4, pp.~15--18]{PFMR14}
+therefore retains the full refinements. The equality module here is
+\(R^2\oplus(R/(\eps))^{2r}\); its transformation formulas and the
+classical Arf criterion underlie the short local normalizations.
+Our explicit normalization does not depend on Proposition 7 of the
+saved nineteen-page version of \citep{MPG13}. A counterexample to that
+particular printed statement is given in \cref{app:MPG}; no conclusion
+about the whole algorithm or other versions is inferred from it.
+
+\appendix
+\section{The common Maiorana--McFarland coordinates}\label{app:MM}
+This appendix gives the parameter correspondence behind
+\cref{lem:core-phase}. Let
+\[
+ E=K[\beta],\qquad \beta^2+\beta=\alpha,
+ \qquad\Tr_{E/K}(\beta)=1.
+\]
+Thus \(E=\F_{16}\). Put
+\[
+ X=(b+d)+\beta d,\quad Y=a+\beta c,\qquad
+ U=\upsilon+\beta\sigma,\quad
+ V=(\tau+\rho)+\beta\rho.
+\]
+Direct multiplication gives
+\[
+ \Tr_{E/K}(XY)=ad+bc,\qquad
+ \Tr_{E/\F_2}(UX+VY)
+ =\Tr(\rho a+\sigma b+\tau c+\upsilon d).
+\]
+Write \(\mathcal H(Y)=\Tr(ac)+fa+ga^2+\ell c+mc^2\), interpreted
+as a \(K\)-valued function of \(Y=a+\beta c\). For \(z\in K^\times\),
+define
+\begin{align*}
+ h_z&=(z\theta+z^2j^2)+\beta(z\eta+z^2k^2),\quad
+ \pi_z(Y)=zY+h_z,\qquad g_z(Y)=z\beta\mathcal H(Y).
+\end{align*}
+The trace identity \(\Tr(zw^2)=\Tr(z^2w)\) then gives exactly
+\[
+ \Tr(zQ^{(0)})
+ =\Tr_{E/\F_2}\bigl(X\pi_z(Y)+g_z(Y)\bigr).
+\]
+Each \(\pi_z\) is an affine permutation of \(E\). Apply
+\citep[equation (4), p.~313]{CMP18} with \(p=2\), \(m=4\), \(s=1\),
+component parameter \(1\), and the trace pairing displayed above.
+The actual phase is
+\[
+ \Tr_{E/\F_2}\bigl(V\pi_z^{-1}(U)
+                     +g_z(\pi_z^{-1}(U))\bigr).
+\]
+Here \(\pi_z^{-1}(U)=a_z+\beta c_z\), with \(a_z,c_z\) from
+\eqref{eq:az}. Substitution gives \eqref{eq:raw-core} including
+\(E_z(0)\), for every one of the \(2^{16}\) refinements, not only the
+\(96\) selected maps. When \(\eta=\theta=j=k=0\), the whole
+\(K\)-valued core has the common representation
+\(\Tr_{E/K}(XY+\beta\mathcal H(Y))\), with a generally nonzero
+arbitrary function \(g\). The later \(g=0\) hypotheses of
+\citep[Theorem 2]{CMP18} are not needed for equation (4).
+
+\section{A version-specific vanishing-pencil example}\label{app:MPG}
+We refer only to the nineteen-page ePrint revision of
+\citep{MPG13}, Proposition 7 on p.~14. The consulted PDF has SHA-256
+\texttt{6ce819d937f24089cf0e81f508129808}\allowbreak\texttt{e681346464a1c75cb5642981ef62aa1d}.
+Its statement sends any vanishing
+pencil to characteristics \((0,0,H^m,0)\), \(m\geq d/2\).
+The following example checks the claim at the smallest nonzero
+nilpotent parameter. It does not belong to the semi-extraspecial class
+of \cref{sec:main} and plays no role in the proofs of the main results.
+
+Take base and residue fields \(\F_2\), local length \(d=2\),
+\(R=\F_2[H]/(H^2)\), \(t=1+H\), and
+\(\lambda(a+Hb)=b\). In coordinates \(x=a+Hb\), \(y=c+Hd\), set
+\[
+ q_\infty=ad+bc,\qquad
+ q_0=ad+bc+ac+a^2+c^2.
+\]
+Both polars are nondegenerate. In the block order \((b,a;d,c)\),
+the multiplication matrix and trace matrix are
+\[
+ M=\begin{pmatrix}1&1\\0&1\end{pmatrix},\qquad
+ T=\begin{pmatrix}0&1\\1&0\end{pmatrix},\qquad
+ TM=\begin{pmatrix}0&1\\1&1\end{pmatrix}.
+\]
+The minimal and characteristic polynomials of \(M\) are both
+\((X+1)^2\), so this is a cyclic regular pencil of the required
+primary type. The first form has no diagonal terms, and the second
+has the two diagonal characteristics \(H,H\): the full tuple is
+\((0,0,H,H)\). Moreover the invertible binary change
+\[
+ (a,b,c,d)\longmapsto(a,b+c,c,d+a+c)
+\]
+interchanges the two quadratic forms. Indeed its pullback sends
+\(q_\infty\) to \(q_0\), and adding \(ac+a^2+c^2\) sends the latter
+back to \(q_\infty\). Thus both ordered pencils are semi-vanishing,
+which is exactly the printed vanishing condition.
+
+For the input pair, simultaneous vanishing requires
+\(ac+a+c=0\), whose only solution in \(\F_2^2\) is \(a=c=0\).
+There are therefore four common zeros. The printed targets at \(d=2\)
+have second form either
+\(ad+bc+ac+a^2\) or \(ad+bc+ac\). In the first case the permitted
+\((a,c)\) are \((0,0),(0,1),(1,1)\); in the second they are
+\((0,0),(0,1),(1,0)\). Each gives respectively four, two, and two
+choices of \((b,d)\), so each target has eight common zeros.
+An invertible input change preserves this number, as does even a
+common invertible target change. Hence the printed reduction is false
+for this example over the original field. No field extension or
+affine operation is part of that fixed-field isomorphism statement.
+This observation is restricted to that version and proposition; it
+does not invalidate its other local transformation formulas or claim
+anything about originality of the main results here.
+
+\section*{Use of generative AI}
+Generative AI tools, including OpenAI Codex/ChatGPT and the system
+recorded as Muse Spark 1.3, contributed to mathematical exploration
+and proof development, computational checks, literature review, and
+manuscript drafting. This included substantive mathematical steps and
+initial text generation, not only language editing. Exact historical
+deployment versions are not fully documented. Internal automated checks
+are not external peer review.
+
+\begingroup
+\raggedright
+\begin{thebibliography}{8}
+\bibitem[Abdukhalikov et~al.(2024)]{AFH24}
+Abdukhalikov, K., Feng, R., Ho, D. (2024).
+Quadratic bent functions and their duals.
+\emph{Applicable Algebra in Engineering, Communication and Computing}
+\textbf{35}(4), 507--523.
+\url{https://doi.org/10.1007/s00200-022-00564-5}.
+
+\bibitem[\c{C}e\c{s}melio\u{g}lu et~al.(2018)]{CMP18}
+\c{C}e\c{s}melio\u{g}lu, A., Meidl, W., Pott, A. (2018).
+Vectorial bent functions and their duals.
+\emph{Linear Algebra and its Applications} \textbf{548}, 305--320.
+\url{https://doi.org/10.1016/j.laa.2018.03.016}.
+
+\bibitem[Kaur and Kulshrestha(2012)]{KK12}
+Kaur, D., Kulshrestha, A. (2012). Strongly real special 2-groups.
+arXiv:1210.3790v1.
+\url{https://arxiv.org/abs/1210.3790v1}.
+Cited numbering and pages refer to this version.
+
+\bibitem[Kaur and Kulshrestha(2015)]{KK15}
+Kaur, D., Kulshrestha, A. (2015). Characters of real special 2-groups.
+arXiv:1510.06583v1.
+\url{https://arxiv.org/abs/1510.06583v1}.
+
+\bibitem[Lewis and Maglione(2020)]{LM18}
+Lewis, M. L., Maglione, J. (2020).
+Enumerating isoclinism classes of semi-extraspecial groups.
+\emph{Proceedings of the Edinburgh Mathematical Society}
+\textbf{63}, 426--442.
+\url{https://doi.org/10.1017/S0013091519000531}.
+Cited numbering and PDF pages refer to arXiv:1806.10511v2 (2018),
+\url{https://arxiv.org/abs/1806.10511v2}.
+
+\bibitem[Macario-Rat et~al.(2013)]{MPG13}
+Macario-Rat, G., Pl\^ut, J., Gilbert, H. (2013).
+New Insight into the Isomorphism of Polynomial Problem IP1S and Its
+Use in Cryptography. IACR Cryptology ePrint Archive, Report 2013/799.
+\url{https://eprint.iacr.org/2013/799.pdf}.
+Cited statements refer to the nineteen-page revision,
+not the seventeen-page conference archive.
+
+\bibitem[Pl\^ut et~al.(2014)]{PFMR14}
+Pl\^ut, J., Fouque, P.-A., Macario-Rat, G. (2014).
+Solving the ``Isomorphism of Polynomials with Two Secrets'' Problem
+for All Pairs of Quadratic Forms. arXiv:1406.3163v3.
+\url{https://arxiv.org/abs/1406.3163v3}.
+
+\bibitem[Wang et~al.(2023)]{WFW23}
+Wang, J., Fu, F.-W., Wei, Y. (2023).
+Bent Partitions, Vectorial Dual-Bent Functions and Partial Difference
+Sets. arXiv:2301.00581v1.
+\url{https://arxiv.org/abs/2301.00581v1}.
+\end{thebibliography}
+\endgroup
+\end{document}

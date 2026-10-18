@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "For mathematical results, use preferred-citation for the paper; for software use, also cite this companion version."
+type: software
+title: "RP01 companion: exact finite checks and Chinese explanation for Extremal Klein Four Counts in Semi-Extraspecial 2-Groups"
+authors:
+  - family-names: "Liu"
+    given-names: "Qi"
+version: "0.1.0"
+doi: "10.5281/zenodo.23450447"
+repository-code: "https://github.com/oNanachii/rp01-extremal-klein-four"
+url: "https://github.com/oNanachii/rp01-extremal-klein-four/releases/tag/v0.1.0"
+abstract: "Exact finite verification code, build sources and a complete Chinese explanation accompanying the research preprint. MIT applies to original code and data only; paper/explanation text is CC BY 4.0 and MathJax is Apache-2.0, as specified in LICENSE_SCOPE.md."
+license: MIT
+preferred-citation:
+  type: unpublished
+  authors:
+    - family-names: "Liu"
+      given-names: "Qi"
+  title: "Extremal Klein Four Counts in Semi-Extraspecial 2-Groups"
+  year: 2026
+  doi: "10.5281/zenodo.23450418"
+  url: "https://doi.org/10.5281/zenodo.23450418"
+  version: "0.1.0"
+  notes: "Research preprint, manuscript dated 17 October 2026; original text licensed CC BY 4.0."

@@ -1,0 +1,79 @@
+{
+  "status": "passed",
+  "release_version": "0.1.0",
+  "checked_utc": "2026-10-18T10:20:21.587109+00:00",
+  "mathematical_changes": false,
+  "paper_pages": 19,
+  "explanation_pages": 63,
+  "retained_labels": 70,
+  "proof_source_blocks_unchanged": true,
+  "paper_body_pages_2_through_19_unchanged_except_running_headers": true,
+  "pdf_visual_checks": "paper first page and Chinese version/licence/DOI page inspected after metadata edits; other body layout unchanged",
+  "tex_overfull_boxes": {
+    "paper": 0,
+    "explanation": 0
+  },
+  "html": {
+    "body_compensation_mentions": 4,
+    "paragraphs": 443,
+    "math_sources": 1621,
+    "rendered_math": 1634,
+    "math_errors": [],
+    "broken_anchors": [],
+    "desktop_scroll_width": 1440,
+    "desktop_width": 1440,
+    "search_count": "1/4",
+    "search_value": "补偿",
+    "direct_search_matches": 4,
+    "search_next_count": "2/4",
+    "tablet": {
+      "scroll_width": 820,
+      "width": 820
+    },
+    "tablet_toc_visible": true,
+    "javascript_errors": [],
+    "http_requests_while_offline": []
+  },
+  "light_check": {
+    "status": "passed",
+    "executed_utc": "2026-10-18T10:18:47.930451+00:00",
+    "source_sha256": {
+      "cmp_mm.py": "6d7dc61d0fc1933c762bbc02b1816ac67a00e8620dfaa98f5c9f5927e031b334",
+      "full_core.py": "20617ed251a4a0155de9a8bd7888fe4949ce37a161e62b706a362243cc0cb0cb",
+      "mpg_instances.py": "1fa7fde9a4478c60d06df6ccf1c4b23ca29a8952c95ea34ecd812becd3c83eac",
+      "run_checks.py": "48cc28ab072ece92f25bc2d07cf44617bc146b4d285326bdb7f183daf01e44af"
+    }
+  },
+  "full_check": {
+    "status": "passed",
+    "executed_utc": "2026-10-17T14:14:38.258322+00:00",
+    "rerun_in_release_preparation": false,
+    "source_sha256_unchanged": true
+  },
+  "licences": {
+    "text": "CC-BY-4.0",
+    "original_code_and_data": "MIT",
+    "MathJax": "Apache-2.0"
+  },
+  "identifiers": {
+    "paper": "10.5281/zenodo.23450418",
+    "companion": "10.5281/zenodo.23450447"
+  },
+  "clean_archive_rebuild": {
+    "manifest_verified_before_rebuild": true,
+    "build_all": "passed",
+    "light": "passed",
+    "pdf_text_comparison": {
+      "RP01_preprint.pdf": {
+        "pages_equal": true,
+        "searchable_text_equal_every_page": true
+      },
+      "RP01_EXPLAINED_ZH.pdf": {
+        "pages_equal": true,
+        "searchable_text_equal_every_page": true
+      }
+    },
+    "html_bytes_equal": true,
+    "isolation": "temporary directory containing only archive whitelist files; existing declared system build tools used"
+  }
+}

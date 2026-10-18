@@ -1,0 +1,634 @@
+{
+  "format_version": 1,
+  "mode": "light",
+  "status": "passed",
+  "executed_utc": "2026-10-18T10:18:47.930451+00:00",
+  "python_version": "3.13.3",
+  "elapsed_seconds": 0.683754,
+  "source_sha256": {
+    "cmp_mm.py": "6d7dc61d0fc1933c762bbc02b1816ac67a00e8620dfaa98f5c9f5927e031b334",
+    "full_core.py": "20617ed251a4a0155de9a8bd7888fe4949ce37a161e62b706a362243cc0cb0cb",
+    "mpg_instances.py": "1fa7fde9a4478c60d06df6ccf1c4b23ca29a8952c95ea34ecd812becd3c83eac",
+    "run_checks.py": "48cc28ab072ece92f25bc2d07cf44617bc146b4d285326bdb7f183daf01e44af"
+  },
+  "mathematical_scope": "Bounded finite checks; not a proof of the general theorems",
+  "results": {
+    "selected_examples": [
+      {
+        "name": "n2_lower",
+        "dimension_V": 4,
+        "half_dimension_n": 2,
+        "group_order": 64,
+        "original_Gauss_sums": [
+          4,
+          4,
+          4
+        ],
+        "polar_ranks": [
+          4,
+          4,
+          4
+        ],
+        "dual_polar_rank": 0,
+        "zero_vectors": 7,
+        "s": 28,
+        "T0": 25,
+        "J2": 400,
+        "zero_binary_planes": 1,
+        "v4": 53,
+        "triple_Walsh_moment": 0,
+        "raw_dual_character_sum": 0,
+        "truth_table_reconstructed_from_binary_ANF": true,
+        "actual_Klein_subgroups_in_central_extension": 53,
+        "actual_ordered_commuting_involutory_pairs": 400
+      },
+      {
+        "name": "n2_upper",
+        "dimension_V": 4,
+        "half_dimension_n": 2,
+        "group_order": 64,
+        "original_Gauss_sums": [
+          4,
+          4,
+          4
+        ],
+        "polar_ranks": [
+          4,
+          4,
+          4
+        ],
+        "dual_polar_rank": 0,
+        "zero_vectors": 7,
+        "s": 28,
+        "T0": 31,
+        "J2": 496,
+        "zero_binary_planes": 2,
+        "v4": 69,
+        "triple_Walsh_moment": 1024,
+        "raw_dual_character_sum": 16,
+        "truth_table_reconstructed_from_binary_ANF": true,
+        "actual_Klein_subgroups_in_central_extension": 69,
+        "actual_ordered_commuting_involutory_pairs": 496
+      },
+      {
+        "name": "n3_lower",
+        "dimension_V": 6,
+        "half_dimension_n": 3,
+        "group_order": 256,
+        "original_Gauss_sums": [
+          8,
+          8,
+          8
+        ],
+        "polar_ranks": [
+          6,
+          6,
+          6
+        ],
+        "dual_polar_rank": 6,
+        "zero_vectors": 22,
+        "s": 88,
+        "T0": 178,
+        "J2": 2848,
+        "zero_binary_planes": 19,
+        "v4": 431,
+        "triple_Walsh_moment": -4096,
+        "raw_dual_character_sum": -8,
+        "truth_table_reconstructed_from_binary_ANF": true
+      },
+      {
+        "name": "n3_upper",
+        "dimension_V": 6,
+        "half_dimension_n": 3,
+        "group_order": 256,
+        "original_Gauss_sums": [
+          8,
+          8,
+          8
+        ],
+        "polar_ranks": [
+          6,
+          6,
+          6
+        ],
+        "dual_polar_rank": 6,
+        "zero_vectors": 22,
+        "s": 88,
+        "T0": 190,
+        "J2": 3040,
+        "zero_binary_planes": 21,
+        "v4": 463,
+        "triple_Walsh_moment": 4096,
+        "raw_dual_character_sum": 8,
+        "truth_table_reconstructed_from_binary_ANF": true
+      },
+      {
+        "name": "Q_star",
+        "dimension_V": 8,
+        "half_dimension_n": 4,
+        "group_order": 1024,
+        "original_Gauss_sums": [
+          16,
+          16,
+          16
+        ],
+        "polar_ranks": [
+          8,
+          8,
+          8
+        ],
+        "dual_polar_rank": 4,
+        "zero_vectors": 76,
+        "s": 304,
+        "T0": 1696,
+        "J2": 27136,
+        "zero_binary_planes": 245,
+        "v4": 4371,
+        "triple_Walsh_moment": -262144,
+        "raw_dual_character_sum": -64,
+        "truth_table_reconstructed_from_binary_ANF": true,
+        "all_six_target_basis_changes": [
+          {
+            "ordered_character_pair": [
+              1,
+              2
+            ],
+            "minimal_polynomial": "0b10101",
+            "semisimple": false
+          },
+          {
+            "ordered_character_pair": [
+              1,
+              3
+            ],
+            "minimal_polynomial": "0b10101",
+            "semisimple": false
+          },
+          {
+            "ordered_character_pair": [
+              2,
+              1
+            ],
+            "minimal_polynomial": "0b10101",
+            "semisimple": false
+          },
+          {
+            "ordered_character_pair": [
+              2,
+              3
+            ],
+            "minimal_polynomial": "0b10101",
+            "semisimple": false
+          },
+          {
+            "ordered_character_pair": [
+              3,
+              1
+            ],
+            "minimal_polynomial": "0b10101",
+            "semisimple": false
+          },
+          {
+            "ordered_character_pair": [
+              3,
+              2
+            ],
+            "minimal_polynomial": "0b10101",
+            "semisimple": false
+          }
+        ]
+      },
+      {
+        "name": "teaching_nilpotent_eight",
+        "dimension_V": 8,
+        "half_dimension_n": 4,
+        "group_order": 1024,
+        "original_Gauss_sums": [
+          16,
+          16,
+          16
+        ],
+        "polar_ranks": [
+          8,
+          8,
+          8
+        ],
+        "dual_polar_rank": 4,
+        "zero_vectors": 76,
+        "s": 304,
+        "T0": 1696,
+        "J2": 27136,
+        "zero_binary_planes": 245,
+        "v4": 4371,
+        "triple_Walsh_moment": -262144,
+        "raw_dual_character_sum": -64,
+        "truth_table_reconstructed_from_binary_ANF": true
+      },
+      {
+        "name": "odd_lower_n5",
+        "dimension_V": 10,
+        "half_dimension_n": 5,
+        "group_order": 4096,
+        "original_Gauss_sums": [
+          32,
+          32,
+          32
+        ],
+        "polar_ranks": [
+          10,
+          10,
+          10
+        ],
+        "dual_polar_rank": 6,
+        "zero_vectors": 280,
+        "s": 1120,
+        "T0": 21376,
+        "J2": 342016,
+        "zero_binary_planes": 3423,
+        "v4": 56443,
+        "triple_Walsh_moment": -4194304,
+        "raw_dual_character_sum": -128,
+        "truth_table_reconstructed_from_binary_ANF": true,
+        "all_six_target_basis_changes": [
+          {
+            "ordered_character_pair": [
+              1,
+              2
+            ],
+            "minimal_polynomial": "0b110001",
+            "semisimple": true
+          },
+          {
+            "ordered_character_pair": [
+              1,
+              3
+            ],
+            "minimal_polynomial": "0b100011",
+            "semisimple": true
+          },
+          {
+            "ordered_character_pair": [
+              2,
+              1
+            ],
+            "minimal_polynomial": "0b100011",
+            "semisimple": true
+          },
+          {
+            "ordered_character_pair": [
+              2,
+              3
+            ],
+            "minimal_polynomial": "0b110001",
+            "semisimple": true
+          },
+          {
+            "ordered_character_pair": [
+              3,
+              1
+            ],
+            "minimal_polynomial": "0b110001",
+            "semisimple": true
+          },
+          {
+            "ordered_character_pair": [
+              3,
+              2
+            ],
+            "minimal_polynomial": "0b100011",
+            "semisimple": true
+          }
+        ]
+      },
+      {
+        "name": "even_lower_n6",
+        "dimension_V": 12,
+        "half_dimension_n": 6,
+        "group_order": 16384,
+        "original_Gauss_sums": [
+          64,
+          64,
+          64
+        ],
+        "polar_ranks": [
+          12,
+          12,
+          12
+        ],
+        "dual_polar_rank": 4,
+        "zero_vectors": 1072,
+        "s": 4288,
+        "T0": 295936,
+        "J2": 4734976,
+        "zero_binary_planes": 48787,
+        "v4": 787019,
+        "triple_Walsh_moment": -268435456,
+        "raw_dual_character_sum": -1024,
+        "truth_table_reconstructed_from_binary_ANF": true
+      },
+      {
+        "name": "compensation_not_lower_n6",
+        "dimension_V": 12,
+        "half_dimension_n": 6,
+        "group_order": 16384,
+        "original_Gauss_sums": [
+          64,
+          64,
+          64
+        ],
+        "polar_ranks": [
+          12,
+          12,
+          12
+        ],
+        "dual_polar_rank": 4,
+        "zero_vectors": 1072,
+        "s": 4288,
+        "T0": 308224,
+        "J2": 4931584,
+        "zero_binary_planes": 50835,
+        "v4": 819787,
+        "triple_Walsh_moment": 268435456,
+        "raw_dual_character_sum": 1024,
+        "truth_table_reconstructed_from_binary_ANF": true
+      },
+      {
+        "name": "negative_core",
+        "dimension_V": 8,
+        "half_dimension_n": 4,
+        "group_order": 1024,
+        "original_Gauss_sums": [
+          -16,
+          -16,
+          -16
+        ],
+        "polar_ranks": [
+          8,
+          8,
+          8
+        ],
+        "dual_polar_rank": 4,
+        "zero_vectors": 52,
+        "s": 208,
+        "T0": 544,
+        "J2": 8704,
+        "zero_binary_planes": 65,
+        "v4": 1347,
+        "triple_Walsh_moment": -262144,
+        "raw_dual_character_sum": -64,
+        "truth_table_reconstructed_from_binary_ANF": true
+      },
+      {
+        "name": "negative_plane",
+        "dimension_V": 4,
+        "half_dimension_n": 2,
+        "group_order": 64,
+        "original_Gauss_sums": [
+          -4,
+          -4,
+          -4
+        ],
+        "polar_ranks": [
+          4,
+          4,
+          4
+        ],
+        "dual_polar_rank": 0,
+        "zero_vectors": 1,
+        "s": 4,
+        "T0": 1,
+        "J2": 16,
+        "zero_binary_planes": 0,
+        "v4": 1,
+        "triple_Walsh_moment": -1024,
+        "raw_dual_character_sum": -16,
+        "truth_table_reconstructed_from_binary_ANF": true
+      }
+    ],
+    "all_96_explicit_normalizers": {
+      "coordinate_maps": 96,
+      "vectors_per_map": 256,
+      "target_fixed": true,
+      "proof_scope": "Explicit substitutions, not a search for equivalences"
+    },
+    "double_negative_remainder": {
+      "negative_pair_to_positive_pair_columns": [
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          2,
+          1,
+          2,
+          0
+        ]
+      ],
+      "all_256_vectors_checked": true,
+      "all_six_target_lifts_checked": true,
+      "consequence": "Q_star plus two negative planes is equivalent to Q_star plus two positive planes"
+    },
+    "version_specific_MPG_instances": {
+      "scope": "explicit examples and residual formula only; no GL(8,2) or group enumeration",
+      "four_dimensional": {
+        "A=1,B=1": {
+          "polar_ranks": [
+            4,
+            4,
+            2
+          ],
+          "common_zeros": 4,
+          "zero_F2_planes": 1,
+          "Gauss_sums": [
+            4,
+            4,
+            -8
+          ]
+        },
+        "A=1,B=0": {
+          "polar_ranks": [
+            4,
+            4,
+            2
+          ],
+          "common_zeros": 8,
+          "zero_F2_planes": 3,
+          "Gauss_sums": [
+            4,
+            4,
+            8
+          ]
+        },
+        "A=0,B=0": {
+          "polar_ranks": [
+            4,
+            4,
+            2
+          ],
+          "common_zeros": 8,
+          "zero_F2_planes": 3,
+          "Gauss_sums": [
+            4,
+            4,
+            8
+          ]
+        }
+      },
+      "swap_identity_checked_at": 16,
+      "eight_dimensional": {
+        "trace_one": {
+          "polar_ranks": [
+            8,
+            8,
+            8
+          ],
+          "common_zeros": 76,
+          "zero_F2_planes": 245,
+          "Gauss_sums": [
+            16,
+            16,
+            16
+          ],
+          "Tr_AB": 1
+        },
+        "H": {
+          "polar_ranks": [
+            8,
+            8,
+            8
+          ],
+          "common_zeros": 76,
+          "zero_F2_planes": 277,
+          "Gauss_sums": [
+            16,
+            16,
+            16
+          ],
+          "Tr_AB": 0
+        },
+        "zero": {
+          "polar_ranks": [
+            8,
+            8,
+            8
+          ],
+          "common_zeros": 76,
+          "zero_F2_planes": 277,
+          "Gauss_sums": [
+            16,
+            16,
+            16
+          ],
+          "Tr_AB": 0
+        }
+      },
+      "ANF_vs_F4_checks": 768,
+      "project_parameter_instance_checks": 256,
+      "SL2_F4_formula_checks": 960
+    },
+    "CMP_equation_4_common_F16_substitution": {
+      "scope": "4 specified core maps; no orbit enumeration",
+      "field": "beta^2+beta=alpha over F4",
+      "cases": {
+        "base_core": {
+          "coefficients_f_g_ell_m_eta_k_theta_j": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "input_identity_checks": 768,
+          "direct_Walsh_checks": 768,
+          "original_Gauss_sums": [
+            16,
+            16,
+            16
+          ],
+          "actual_dual_sum_character_sum": 64,
+          "v4_if_on_maximum_s_branch": 4883
+        },
+        "Q_star": {
+          "coefficients_f_g_ell_m_eta_k_theta_j": [
+            1,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "input_identity_checks": 768,
+          "direct_Walsh_checks": 768,
+          "original_Gauss_sums": [
+            16,
+            16,
+            16
+          ],
+          "actual_dual_sum_character_sum": -64,
+          "v4_if_on_maximum_s_branch": 4371
+        },
+        "negative_core_from_example_7_1": {
+          "coefficients_f_g_ell_m_eta_k_theta_j": [
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "input_identity_checks": 768,
+          "direct_Walsh_checks": 768,
+          "original_Gauss_sums": [
+            -16,
+            -16,
+            -16
+          ],
+          "actual_dual_sum_character_sum": -64,
+          "v4_if_on_maximum_s_branch": null
+        },
+        "generic_refinement": {
+          "coefficients_f_g_ell_m_eta_k_theta_j": [
+            2,
+            3,
+            1,
+            2,
+            1,
+            2,
+            3,
+            1
+          ],
+          "input_identity_checks": 768,
+          "direct_Walsh_checks": 768,
+          "original_Gauss_sums": [
+            -16,
+            -16,
+            16
+          ],
+          "actual_dual_sum_character_sum": 0,
+          "v4_if_on_maximum_s_branch": null
+        }
+      }
+    }
+  }
+}

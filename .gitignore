@@ -1,0 +1,6 @@
+tmp/
+__pycache__/
+*.pyc
+release/
+output/*.zip
+.DS_Store
